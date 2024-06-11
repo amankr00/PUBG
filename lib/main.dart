@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // primarySwatch: Colors.amber,
         fontFamily: GoogleFonts.signika().fontFamily,
-        textTheme: GoogleFonts.bebasNeueTextTheme(),
+        textTheme: GoogleFonts.russoOneTextTheme(),
       ),
           
         

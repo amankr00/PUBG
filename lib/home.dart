@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:simple_animations/simple_animations.dart';
-
-
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:video_player/video_player.dart';
+
+
 
 class HomeMain extends StatelessWidget {
   get style => null;
@@ -31,8 +31,8 @@ class HomeMain extends StatelessWidget {
                 borderRadius: BorderRadius.circular(500),
                 child: Image.asset(
                   'assets/images/title.png',
-                  width: 200,
-                  height: 100,
+                  width: 235,
+                  height: 106,
                 ),
               ),
               Row(
@@ -59,7 +59,8 @@ class HomeMain extends StatelessWidget {
                               'ENGLISH (EMEA)',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 255, 255, 255),
-                                fontSize: 20,
+                                fontSize: 15,
+                                decoration: TextDecoration.none
                               ),
                             ),
                           ],
@@ -73,12 +74,13 @@ class HomeMain extends StatelessWidget {
                       'LOG IN',
                       style: TextStyle(
                         color: Color.fromARGB(255, 255, 255, 255),
-                        fontSize: 20,
+                        fontSize: 15,
+                        decoration: TextDecoration.none,
                       ),
                     ),
                   ),
                   Container(
-                      width: 200,
+                      width: 275,
                       height: 100,
                       color: Color.fromARGB(255, 246, 193, 0),
                       child: Align(
@@ -87,7 +89,8 @@ class HomeMain extends StatelessWidget {
                             'PLAY NOW',
                             style: TextStyle(
                               color: Color.fromARGB(255, 0, 0, 0),
-                              fontSize: 20,
+                              fontSize: 25,
+                              decoration: TextDecoration.none
                             ),
                           )))
                 ],
@@ -110,6 +113,7 @@ class HomeMain extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 17,
+                decoration: TextDecoration.none
               ),
             ),
             Text(
@@ -117,6 +121,7 @@ class HomeMain extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 17,
+                decoration: TextDecoration.none
               ),
             ),
             Text(
@@ -124,6 +129,7 @@ class HomeMain extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 17,
+                decoration: TextDecoration.none
               ),
             ),
             Text(
@@ -131,6 +137,7 @@ class HomeMain extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 17,
+                decoration: TextDecoration.none
               ),
             ),
             Text(
@@ -138,6 +145,7 @@ class HomeMain extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 17,
+                decoration: TextDecoration.none
               ),
             ),
             Text(
@@ -145,6 +153,7 @@ class HomeMain extends StatelessWidget {
               style: TextStyle(
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontSize: 17,
+                decoration: TextDecoration.none
               ),
             ),
           ]),
@@ -152,13 +161,15 @@ class HomeMain extends StatelessWidget {
 
         Container(
           width: 1800,
-          height: 741,
+          height: 900,
           decoration: BoxDecoration(
+          // color: Color.fromARGB(255, 255, 255, 255)
+          //                     .withOpacity(1.0),
             image: DecorationImage(
               image: AssetImage("assets/images/backgd.png"),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
-                  Color.fromARGB(255, 0, 0, 0).withOpacity(1.0),
+                  Color.fromARGB(255, 0, 0, 0).withOpacity(0.9),
                   BlendMode.dstATop),
             ),
           ),
@@ -170,6 +181,7 @@ class HomeMain extends StatelessWidget {
                   'PUBG: BATTLEGROUNDS',
                   style: GoogleFonts.russoOne(
                     fontSize: 70.0,
+                    decoration: TextDecoration.none,
                     fontWeight: FontWeight.w100,
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
@@ -181,23 +193,215 @@ class HomeMain extends StatelessWidget {
                   style: GoogleFonts.russoOne(
                     fontSize: 20.0,
                     fontWeight: FontWeight.w100,
+                    decoration: TextDecoration.none,
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ),
-               Center(
+              Center(
                 child: Text(
                   'Play PUBG:BATTLEGROUNDS for free.',
+                  
                   style: GoogleFonts.russoOne(
                     fontSize: 20.0,
+                    decoration: TextDecoration.none,
                     fontWeight: FontWeight.w100,
                     color: Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
               ),
+              Container(
+                width: 950,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 255, 255)
+                      .withOpacity(0.01),
+                ),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        width: 230,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 246, 246)
+                              .withOpacity(0.001),
+                          border: Border.all(
+                            color: const Color.fromARGB(255, 251, 251, 251), //                   <--- border color
+                            width: 1.5,
+                          ),
+                        ),
+
+                        child : Padding(
+                    padding: EdgeInsetsDirectional.all(10),
+                        child : Row(  // Image , Text
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                        children : [
+                         Container(
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'assets/images/steam.png',
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                            ),
+
+                            Text('Steam',
+                            style: TextStyle(
+                            fontSize: 20,
+                            decoration: TextDecoration.none,
+                            color : Colors.white),),
+                            ]
+                        
+
+
+                        ),
+                        ),
+                      ),
+                      
+                      Container(
+                        width: 230,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 246, 246)
+                              .withOpacity(0.001),
+                          border: Border.all(
+                            color: const Color.fromARGB(255, 251, 251, 251), //                   <--- border color
+                            width: 1.5,
+                          ),
+                        ),
+
+                        child : Padding(
+                    padding: EdgeInsetsDirectional.all(10),
+                        child : Row(  // Image , Text
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                        children : [
+                         Container(
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'assets/images/epic.png',
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                            ),
+
+                            Text('Epic Games',
+                            style: TextStyle(
+                            fontSize: 20,
+                            decoration: TextDecoration.none,
+                            color:Colors.white),),
+                            ]
+                        
+
+
+                        ),
+                        ),
+                      ),
+                      
+                      Container(
+                        width: 230,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 246, 246)
+                              .withOpacity(0.001),
+                          border: Border.all(
+                            color: const Color.fromARGB(255, 251, 251, 251), //                   <--- border color
+                            width: 1.5,
+                          ),
+                        ),
+
+                        child : Padding(
+                    padding: EdgeInsetsDirectional.all(10),
+                        child : Row(  // Image , Text
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                        children : [
+                         Container(
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'assets/images/playstation.png',
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                            ),
+
+                            Text('PlayStation',
+                            style: TextStyle(
+                            fontSize: 20,
+                            decoration: TextDecoration.none,
+                            color : Colors.white)),
+                            ]
+                        
+
+
+                        ),
+                        ),
+                      ),
+                      
+                      Container(
+                        width: 230,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 246, 246, 246)
+                              .withOpacity(0.001),
+                          border: Border.all(
+                            color: const Color.fromARGB(255, 251, 251, 251), //                   <--- border color
+                            width: 1.5,
+                          ),
+                        ),
+
+                        child : Padding(
+                    padding: EdgeInsetsDirectional.all(10),
+                        child : Row(  // Image , Text
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                        children : [
+                         Container(
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  'assets/images/xbox.png',
+                                  width: 40,
+                                  height: 40,
+                                ),
+                              ),
+                            ),
+
+                            Text('Xbox',
+                            style: TextStyle(
+                            fontSize: 20,
+                            decoration: TextDecoration.none,
+                            color : Colors.white),),
+                            ]
+                        
+
+
+                        ),
+                        ),
+                      ),
+                      
+                      
+                    ]),
+              ),
             ],
           ),
         ),
+        
+        Container(
+
+
+        
+        height: 600,
+        color: Color.fromARGB(255, 13, 194, 46)),
+
+        Container(
+        width: 1300,
+        height: 600,
+        color: const Color.fromARGB(255, 171, 30, 30))
       ]),
     ));
   }

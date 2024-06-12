@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pubg/home.dart';
+import 'package:pubg/pages/video_player_page.dart';
+
 
 
 void main() {
@@ -25,7 +27,7 @@ class MyApp extends StatelessWidget {
         
       initialRoute: '/',
       routes: {
-        '/': (context) => HomeMain(),
+        '/': (context) => VideoPlayerPage(),
       
       },
     );

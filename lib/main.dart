@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         
       initialRoute: '/',
       routes: {
-        '/': (context) => VideoPlayerPage(),
+        '/': (context) => HomeMain(),
       
       },
     );

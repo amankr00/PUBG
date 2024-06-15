@@ -34,12 +34,9 @@ class _VideoPlayerPage extends State<VideoPlayerPage> {
   _videoPlayerController = VideoPlayerController.asset(assetVideoPath)..initialize().then((_) {
 
 
-  
   });
 
   
-
-
 
 }
 }
